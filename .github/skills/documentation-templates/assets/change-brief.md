@@ -18,7 +18,9 @@ _How things should work after the change._
 
 ## Affected users or audiences
 
-_Who is affected (end users, operators, developers, support, etc.)._
+_Who is affected (end users, operators, developers, support, etc.), now and
+plausibly later. Note whether an internal-only audience is a deliberate boundary
+or just how it works today._
 
 ## User-facing implications
 

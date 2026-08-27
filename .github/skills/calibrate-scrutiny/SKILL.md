@@ -27,7 +27,10 @@ a small change buries the one thing the reader should notice.
 
 Push harder, and produce the fuller structured output, when:
 
-- the change is an engineering **design** others will build on,
+- the change is an engineering **design others will build on** — judge by blast
+  radius and reversibility, not by the word "design": a cross-service contract
+  earns the full pass, a self-contained internal design that is cheap to revert
+  does not,
 - a mistake is **expensive or hard to reverse** (data loss, security, migrations,
   public API or contract, published user docs),
 - the change is **large, novel, or complex**, or touches many parts,

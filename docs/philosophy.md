@@ -11,10 +11,11 @@ decisions behind a change easy to see, discuss, and record.
 Socratic Garden treats documentation as part of the engineering process, not only
 as an output after implementation.
 
-- **Design docs capture decisions.** They record the problem, the alternatives,
-  the trade-offs, and the direction chosen.
-- **User docs drafts help define the intended user experience.** Writing them
-  early exposes unclear assumptions and missing decisions.
+- **Design docs capture decisions.** They record the problem, who the change is
+  for, the alternatives, the trade-offs, and the direction chosen.
+- **User docs drafts make the intended experience concrete.** The design should
+  already establish the experience it is aiming for; writing the user docs early
+  tests it against real steps and exposes where it doesn't hold up.
 - **Internal docs preserve reproduction, testing, and maintenance knowledge.**
   They record how engineers reason about and operate the system.
 
@@ -32,6 +33,7 @@ AI can:
 - assemble context,
 - summarize source material,
 - identify missing decisions,
+- surface who a change is for and what it means for them,
 - identify user-facing implications,
 - identify edge cases,
 - suggest documentation structure,
@@ -43,6 +45,7 @@ AI can:
 AI must not, by default:
 
 - decide product behavior,
+- decide who a capability is for, or rule that a change has no user impact,
 - claim unsupported facts,
 - silently edit source files,
 - publish documentation,
@@ -55,13 +58,15 @@ AI must not, by default:
 Socratic Garden reflects a documentation-driven development approach. The rough
 lifecycle is:
 
-1. **Design.** Clarify the problem, goals, user needs, constraints, trade-offs,
-   and proposed solution. Create or review engineering design documentation.
-   Identify decisions and open questions.
-2. **Document.** Draft user-facing docs early enough to help define the intended
-   user experience. Capture internal docs or engineering notes where needed. Use
-   documentation to expose unclear assumptions, missing edge cases, and design
-   gaps.
+1. **Design.** Clarify the problem, goals, constraints, trade-offs, and proposed
+   solution. Establish who the change is for — now and plausibly later — and the
+   experience it should enable, so the technical direction is shaped by it rather
+   than checked against it afterward. Create or review engineering design
+   documentation. Identify decisions and open questions.
+2. **Document.** Draft user-facing docs early to make the intended experience
+   concrete and expose what the design left unresolved. Capture internal docs or
+   engineering notes where needed. Use documentation to surface unclear
+   assumptions, missing edge cases, and design gaps.
 3. **Develop.** Implementation starts after the design direction is sufficiently
    clear. User docs, internal docs, and code-related docs may continue to evolve.
    Design docs generally represent the finalized direction and shouldn't be

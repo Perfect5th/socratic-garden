@@ -57,18 +57,23 @@ modes.
 - **Project level:** open this repository in VS Code or run `copilot` from a
   checkout. The files under `.github/agents/` and `.github/skills/` are read
   directly.
-- **Personal level (every project you open):** clone once and symlink the modes
-  and skills into your personal Copilot directories:
+- **Personal level (every project you open):** clone once and symlink the mode
+  and skill directories into your personal Copilot directories:
 
   ```bash
   git clone git@github.com:YanisaHS/socratic-garden.git ~/socratic-garden
-  mkdir -p ~/.copilot/agents ~/.copilot/skills
-  ln -s ~/socratic-garden/.github/agents/*.agent.md ~/.copilot/agents/
-  ln -s ~/socratic-garden/.github/skills/*          ~/.copilot/skills/
+  mkdir -p ~/.copilot
+  ln -s ~/socratic-garden/.github/agents ~/.copilot/agents
+  ln -s ~/socratic-garden/.github/skills ~/.copilot/skills
   ```
 
-  Because these are symlinks, `git pull` in `~/socratic-garden` updates the modes
-  and skills everywhere. A brand-new mode or skill needs one more `ln -s`.
+  Linking the directories rather than their contents means `git pull` in
+  `~/socratic-garden` is the whole update: a new mode or skill appears without
+  any extra linking. The trade-off is that `~/.copilot/agents` and
+  `~/.copilot/skills` now belong to Socratic Garden. If you keep your own agents
+  or skills there, link the contents instead — `ln -sfn
+  ~/socratic-garden/.github/skills/* ~/.copilot/skills/` — and re-run it after a
+  pull to pick up anything new.
 
 ## Option C — Manual per-host skills (no npx)
 
@@ -90,6 +95,11 @@ mkdir -p .claude/skills
 ln -s "$PWD"/../socratic-garden/.github/skills/* .claude/skills/
 ```
 
+This links the skills one by one, so a skill added upstream won't appear until
+you re-run it (`ln -sfn` overwrites the existing links). These directories
+usually hold skills from several sources, so linking the parent isn't an option;
+if you'd rather not track that by hand, use the skills CLI in Option A.
+
 Use a copy (`cp -r`) instead of a symlink if your tool or filesystem doesn't
 follow symlinks.
 
@@ -102,9 +112,25 @@ fallback CLI to generate a single Markdown session you paste in. See
 ## Updating
 
 - **skills CLI:** `npx skills update`.
-- **Symlinked install:** `git pull` in your clone updates everything at once. Add
-  a symlink only when a brand-new mode or skill appears.
+- **Symlinked install:** `git pull` in your clone updates everything at once,
+  including modes and skills added upstream.
 - **Copied install:** re-copy the folders after a `git pull`.
+
+### If you installed before the directory symlinks
+
+Earlier instructions linked the *contents* of the agent and skill folders, one
+symlink per file. That form doesn't pick up anything added upstream, so a mode
+can end up referencing a skill your tool never loaded. Relink once and `git pull`
+is enough from then on:
+
+```bash
+rm -rf ~/.copilot/agents ~/.copilot/skills
+ln -s ~/socratic-garden/.github/agents ~/.copilot/agents
+ln -s ~/socratic-garden/.github/skills ~/.copilot/skills
+```
+
+Check those directories first if you keep your own agents or skills in them — the
+command above removes whatever is there.
 
 ## What each tool supports
 

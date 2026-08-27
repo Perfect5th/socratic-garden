@@ -39,15 +39,21 @@ kind of noise. Apply this proportionally (see
 - **Operability and observability** — how it's deployed, configured, upgraded,
   monitored, and debugged; what logs, metrics, and alerts operators need.
 - **Usability and accessibility** — whether the people using it can actually
-  succeed, including accessibility for users with disabilities.
+  succeed, including accessibility for users with disabilities. This lens asks
+  whether the thing being built works for its users; establishing *who* those
+  users are and what experience it should enable belongs to
+  [establish-user-context](../establish-user-context/SKILL.md), and comes first.
 - **Specialized and constrained environments** — air-gapped or offline
   deployments, on-premises vs. cloud, specific platforms or architectures,
   resource-limited devices, and regional differences the design must work in.
 
 ## How to use it
 
-- For each dimension that applies, ask **one focused question at a time** rather
-  than dumping the whole list on the human.
+- When you are interviewing the human, ask about each dimension that applies
+  **one focused question at a time** rather than dumping the whole list on them.
+  When you are writing a review, group the findings that matter into the report
+  instead — the one-question rule is about interviews, not about limiting what a
+  review may raise.
 - Don't invent requirements or thresholds. If a target (a latency budget, a
   compliance standard) isn't known, record it as an open question with an owner.
 - Separate what's decided from what's assumed from what's still open.

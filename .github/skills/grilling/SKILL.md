@@ -30,6 +30,11 @@ not an interrogation and not a form to fill out.
   marching through a fixed list.
 - Track what is still open. When the important branches are resolved, say so and
   stop, rather than asking questions for their own sake.
+- **When they asked for the artifact up front** ("short design doc please"), they
+  want output, not an interview. Ask only what you cannot draft around — usually
+  one or two questions — then produce the artifact with the rest marked as gaps
+  for them to fill. Withholding a draft until every question is answered reads as
+  stalling.
 
 ## What to draw out
 
