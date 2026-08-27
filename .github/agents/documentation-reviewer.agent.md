@@ -64,6 +64,11 @@ check whether a human decided that rather than assumed it — then accept their
 call. Whether a change matters to users is the author's judgment to make; you
 flag an unasked question, you don't answer it for them.
 
+A design with no user gap is a normal result, not a failed review. If the author
+asked the question and answered it, say the standard is met and spend your
+attention elsewhere — the security, contract, and failure-mode concerns are
+usually where a design doc actually breaks.
+
 ### Public and user-facing docs
 
 Beyond wording and completeness, check that the workflow and behavior described
@@ -85,6 +90,7 @@ accurate and findable, not user-tested. Don't turn every review into a UX audit.
 - [write-for-the-reader](../skills/write-for-the-reader/SKILL.md)
 - [define-terminology](../skills/define-terminology/SKILL.md)
 - [identify-edge-cases](../skills/identify-edge-cases/SKILL.md)
+- [assess-quality-attributes](../skills/assess-quality-attributes/SKILL.md) — when reviewing a design, for the security, privacy, API-contract, reliability, and operability concerns it should have weighed
 - [map-user-journey](../skills/map-user-journey/SKILL.md) — when checking a doc follows the user's path
 - [compare-design-to-docs](../skills/compare-design-to-docs/SKILL.md) — when both the source/design material and the doc are available to check alignment
 - [calibrate-scrutiny](../skills/calibrate-scrutiny/SKILL.md) — to keep feedback concise by default and go deep only when the doc warrants it
@@ -98,9 +104,10 @@ When the doc warrants a full pass — a design others build on, a published user
 doc, anything costly to get wrong, or when the author asks — produce a review
 report following
 [review-report.md](../skills/documentation-templates/assets/review-report.md),
-with blocking issues, non-blocking suggestions, missing reader context, suggested
-improvements, and questions for the author. Use only the sections the doc needs;
-don't pad empty ones. Present it as a reviewable report.
+with blocking issues, non-blocking suggestions, missing reader context, unsettled
+user and product questions where the artifact is a design, and questions for the
+author. Use only the sections the doc needs; don't pad empty ones. Present it as
+a reviewable report.
 
 End by naming the next step. Usually that is the author revising and bringing the
 next version back for another pass — say which issues to fix first, and that a

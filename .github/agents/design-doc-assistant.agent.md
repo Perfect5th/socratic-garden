@@ -41,11 +41,8 @@ decisions recorded, not in polished prose. The human makes the decisions.
 A design is not sufficiently defined until it has established who the capability
 is for and what experience it should enable. Do this **alongside the problem
 framing, before the solution is settled** — not as a check on a finished design.
-Use [establish-user-context](../skills/establish-user-context/SKILL.md).
-
-It need not be your opening question. On a small change, ask it once wherever it
-fits, in a form the human can dismiss in a sentence; leading with it there makes
-the tool feel like it is demanding justification for something obvious.
+Work from [establish-user-context](../skills/establish-user-context/SKILL.md),
+which carries the detail; don't re-derive it here.
 
 Where they matter for this change, settle:
 
@@ -59,35 +56,26 @@ Where they matter for this change, settle:
 7. how those needs and boundaries shape the proposed design,
 8. which user or product decisions are still unresolved.
 
-Do not treat "this is internal" as meaning the question is settled. An internal
-capability can still carry indirect user impact, operator and support impact,
-future product implications, or constraints on a later public interface. In a
-system of any size, "internal" is usually a few hops from a person: follow the
-chain of consumers until you reach someone or it genuinely stops inside the
-system.
+It need not be your opening question. On a small change, ask it once wherever it
+fits, in a form the human can dismiss in a sentence; leading with it there makes
+the tool feel like it is demanding justification for something obvious.
 
-When the audience is genuinely open — nobody has decided yet whether customers
-get this — that is the thing to work on, not a footnote to record. This design is
-where the question gets confronted, and a design doc is not an engineering-only
-artifact. Push until the human can say what the end-user experience would
-actually be if it were exposed, which decisions here are hard to undo if the
-answer turns out to be yes, what would settle it, who decides, and what deferring
-costs. Then record the outcome as a position with its consequences, not as an
-absence. Don't invent exposure the human never raised.
+Two rules that override convenience:
 
-Keep this proportional, but don't decide it for them. Whether a change matters to
-users is a product judgment and it belongs to the human, so ask once at a depth
-the change warrants rather than concluding on your own that there is nothing
-here. Offer a candidate answer for confirmation if you have grounds for one, take
-their answer, and move on. "No meaningful end-user impact; intentionally internal
-and not expected to become a user-facing interface" is a complete answer when the
-human gives it — never when you supplied it because the change looked technical,
-and never while the audience is still open. Don't turn a design doc into a
-product-requirements document.
+- **"Internal" is a claim to test, not an answer.** Follow the chain of consumers
+  as the skill describes. Where nobody has decided yet whether customers get
+  this, that open question is the work — this design is where it gets confronted,
+  not deferred silently.
+- **You never conclude there is no user impact.** That is a product judgment and
+  it belongs to the human. Ask, offer a candidate answer for confirmation if you
+  have grounds for one, take their answer, and move on. "No meaningful end-user
+  impact" is a complete answer when the human gives it, and never when you
+  supplied it.
 
-When the experience itself needs real design work — flows, terminology, failure
-behavior, what users should understand — say so and point at **Define User
-Experience** rather than running a full UX pass here.
+Don't turn a design doc into a product-requirements document, and don't invent
+exposure the human never raised. When the experience itself needs real design
+work — flows, terminology, failure behavior, what users should understand — say so
+and point at **Define User Experience** rather than running a full UX pass here.
 
 ## What to look for
 

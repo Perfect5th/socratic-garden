@@ -95,6 +95,11 @@ mkdir -p .claude/skills
 ln -s "$PWD"/../socratic-garden/.github/skills/* .claude/skills/
 ```
 
+This links the skills one by one, so a skill added upstream won't appear until
+you re-run it (`ln -sfn` overwrites the existing links). These directories
+usually hold skills from several sources, so linking the parent isn't an option;
+if you'd rather not track that by hand, use the skills CLI in Option A.
+
 Use a copy (`cp -r`) instead of a symlink if your tool or filesystem doesn't
 follow symlinks.
 

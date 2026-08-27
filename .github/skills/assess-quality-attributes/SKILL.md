@@ -49,8 +49,11 @@ kind of noise. Apply this proportionally (see
 
 ## How to use it
 
-- For each dimension that applies, ask **one focused question at a time** rather
-  than dumping the whole list on the human.
+- When you are interviewing the human, ask about each dimension that applies
+  **one focused question at a time** rather than dumping the whole list on them.
+  When you are writing a review, group the findings that matter into the report
+  instead — the one-question rule is about interviews, not about limiting what a
+  review may raise.
 - Don't invent requirements or thresholds. If a target (a latency budget, a
   compliance standard) isn't known, record it as an open question with an owner.
 - Separate what's decided from what's assumed from what's still open.

@@ -36,8 +36,7 @@ or just current. Keep it short. If exposure is undecided, say what the end-user
 experience would be if it happened, what here would have to change, and who
 decides — an open audience is a decision this doc should confront, not defer
 silently. "No meaningful end-user impact; intentionally internal" is a complete
-answer when the author has decided it is — record it as their conclusion, not as
-an omission and not as something the AI worked out on their behalf._
+answer — record it as a decision someone made, not as an omission._
 
 ## Proposed solution
 

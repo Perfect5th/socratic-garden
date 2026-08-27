@@ -55,6 +55,10 @@ human? Keep going until you reach someone or the chain genuinely stops inside th
 system. Where it surfaces, that person's experience is in scope even though they
 never touch this capability directly.
 
+Follow the chain to ask a better question, not to manufacture an answer. If the
+human has already traced it and told you where it stops, that settles it — take
+their word and move on rather than hunting for a hop they missed.
+
 ## When exposure is undecided, that is the decision to work on
 
 "We don't know yet whether customers will get this" is the case this skill exists
@@ -88,9 +92,6 @@ Do not manufacture speculation. Pursue future exposure when it is plausible,
 raised by the human, visible in the existing context, or materially relevant —
 and drop it when it isn't.
 
-## Keep it proportional
-
-This is not a product-requirements exercise. Once you have followed the chain and
 ## Keep it proportional — but the call is the human's
 
 This is not a product-requirements exercise, and a change with no real user
@@ -110,10 +111,8 @@ What gets recorded is the human's conclusion, not yours:
 > No meaningful end-user impact. This is intentionally internal and is not
 > expected to become a user-facing interface.
 
-Never write that because the change looked technical, and never write it without
-having asked. An unasked question recorded as "no impact" is the exact failure
-this skill exists to prevent — and it is not available at all while the audience
-is still open. Match the depth to the change (see
+Never supply that line yourself, and never record it without having asked. Match
+the depth to the change (see
 [calibrate-scrutiny](../calibrate-scrutiny/SKILL.md)).
 
 ## Watch for hidden product decisions
@@ -148,9 +147,12 @@ is a **design gap**, not a task for a later documentation stage. Report it as
 such.
 
 Where a design states "intentionally internal, no user impact", your job is to
-check whether a human actually decided that — not to re-judge it. If it reads as
-an assumption nobody tested, say so and ask. If the author established it, accept
-it; you don't overrule a product call, and you don't supply one either.
+check whether a human actually decided that — not to re-judge it. A decided
+position usually shows its work: who was consulted, what would have changed the
+answer, or what happens if it turns out wrong. A decorated assumption asserts the
+conclusion and stops. If it reads as the latter, say so and ask. If the author
+established it, accept it; you don't overrule a product call, and you don't
+supply one either.
 
 ## Defer, don't duplicate
 

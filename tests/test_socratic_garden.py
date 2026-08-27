@@ -16,6 +16,7 @@ from socratic_garden import cli, frontmatter, paths
 from socratic_garden.config import DEFAULT_CONFIG_TEXT, SCHEMA_VERSION, load_config
 from socratic_garden.sessions import (
     COMMAND_ALIASES,
+    _LINK_RE,
     SessionError,
     discover_modes,
     discover_skills,
@@ -126,6 +127,51 @@ def test_all_referenced_skill_files_exist() -> None:
             assert skill_path.exists(), f"{mode.key} links missing {skill_path}"
         if mode.template_path is not None:
             assert mode.template_path.exists()
+
+
+# --- Resource integrity --------------------------------------------------
+
+def _github_markdown() -> list[Path]:
+    root = paths.SKILLS_DIR.parent
+    return sorted(root.rglob("*.md"))
+
+
+def test_no_duplicate_consecutive_headings() -> None:
+    # A botched section edit leaves the old heading stranded above the new one.
+    for path in _github_markdown():
+        headings = [
+            line for line in path.read_text(encoding="utf-8").splitlines()
+            if line.startswith("#")
+        ]
+        for first, second in zip(headings, headings[1:]):
+            assert first.strip("# ").lower() != second.strip("# ").lower(), (
+                f"{path}: heading {second!r} repeats the one before it"
+            )
+
+
+def test_no_repeated_paragraphs_within_a_file() -> None:
+    # The other half of a botched section edit: the old prose survives alongside
+    # the replacement. Short lines repeat legitimately; substantial ones don't.
+    for path in _github_markdown():
+        seen: set[str] = set()
+        for block in path.read_text(encoding="utf-8").split("\n\n"):
+            normalized = " ".join(block.split())
+            if len(normalized) < 120 or normalized.startswith(("|", "#")):
+                continue
+            assert normalized not in seen, (
+                f"{path}: repeats a paragraph starting {normalized[:60]!r}"
+            )
+            seen.add(normalized)
+
+
+def test_internal_markdown_links_resolve() -> None:
+    for path in _github_markdown():
+        for target in _LINK_RE.findall(path.read_text(encoding="utf-8")):
+            target = target.strip()
+            if not target or target.startswith(("http://", "https://", "#")):
+                continue
+            resolved = (path.parent / target.split("#", 1)[0]).resolve()
+            assert resolved.exists(), f"{path}: broken link to {target}"
 
 
 # --- Skill format and reachability ----------------------------------------

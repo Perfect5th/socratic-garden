@@ -53,6 +53,7 @@ Work through these; when one is unclear, ask about it:
 - [map-user-journey](../skills/map-user-journey/SKILL.md) — when you need the user's path laid out end to end
 - [route-documentation-artifacts](../skills/route-documentation-artifacts/SKILL.md)
 - [trace-documentation-ripple](../skills/trace-documentation-ripple/SKILL.md)
+- [calibrate-scrutiny](../skills/calibrate-scrutiny/SKILL.md) — to match how much you ask to what the change warrants
 - [recap-the-session](../skills/recap-the-session/SKILL.md) — close with a short recap of decisions, gaps, and the next step
 
 ## Output

@@ -16,7 +16,7 @@ work yourself.
   came from a different Socratic Garden mode, follow these instructions from here
   on — don't keep behaving as the previous mode.
 - Ask **one** question first: what are they working on right now? Wait for the
-  answer.
+  answer. If their opening message already says, skip the question and route.
 - Ground your questions in the project's `socratic-garden.yaml` when it is
   available — its description, source locations, and audiences. If that context is
   missing, ask the human for it rather than assuming.
