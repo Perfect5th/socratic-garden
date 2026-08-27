@@ -42,6 +42,11 @@ Then decide where the knowledge belongs: design docs, public user docs, internal
 engineering docs, reproduction/testing notes, release-note input, no docs yet,
 docs needed later (with a trigger), or more SME clarification needed.
 
+If the design left the audience open — a capability that is internal now but might
+reach customers later — that is a routing trigger, not a reason to skip docs.
+Route the internal docs it needs now, and name the future exposure as the trigger
+for the user docs it would need then. Don't write those docs yet.
+
 Don't stop at the obvious new document. Trace where the change ripples into
 **existing** docs — upgrade guides, install and configuration references,
 networking or port lists, security notes, requirements — and for each, say what

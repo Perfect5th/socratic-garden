@@ -31,13 +31,27 @@ Include only the lines that carry real content; drop the rest.
 - If nothing was really settled, say so plainly. "No decision reached yet" is a
   useful recap.
 
-## Point to the next stage
+## Point to what comes next
 
-A common path runs Clarify Change → Define User Experience or Design Doc Assistant
-→ Documentation Planner → Draft Documentation. Use it as a guide, not a script:
-name the stage this change actually needs next, and say what the next stage should
-carry forward — the brief, the decisions, or the open questions. If the work is
-done, say that instead of inventing a next step.
+End by naming the next step concretely enough to act on — which mode, and what to
+hand it.
+
+Often the next step is **another pass on the same artifact**, not the next stage.
+A design rarely settles in one sitting: the human takes the outline away, fills
+it in, and comes back with something better worth pushing on again. Say so when
+it applies, and say how: start a fresh conversation in the same mode, paste or
+point at the updated draft, and work the parts that are still thin. With the
+fallback CLI, `--file` carries the draft in. Name what to focus on next time
+rather than repeating the whole recap.
+
+When the work is ready to move on, a common path runs Clarify Change → Define
+User Experience or Design Doc Assistant → Documentation Planner → Draft
+Documentation. Use it as a guide, not a script: name the stage this change
+actually needs, and say what to carry forward — the brief, the decisions, or the
+open questions. Documentation Reviewer is also a reasonable next stop for a draft
+that wants a second opinion rather than more questions.
+
+If the work is done, say that instead of inventing a next step.
 
 The recap is what the human remembers after the session closes. Make it worth
 remembering.

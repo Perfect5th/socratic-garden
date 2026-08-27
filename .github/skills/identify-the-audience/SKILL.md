@@ -44,3 +44,12 @@ These are common categories, not a fixed list. Name the ones that apply:
 
 Settle the audience first. Every later choice — depth, terminology, structure,
 and how much to write — follows from it.
+
+## Defer, don't duplicate
+
+This skill is about who a **document** is for. Who the **capability** is for —
+and whether it is internal, exposed, or undecided — is a different question, and
+it belongs to
+[establish-user-context](../establish-user-context/SKILL.md). The two often have
+different answers: a design doc read by internal engineers can describe a
+capability aimed squarely at customers.

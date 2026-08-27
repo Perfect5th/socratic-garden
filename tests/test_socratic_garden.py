@@ -89,8 +89,8 @@ def test_user_context_is_established_during_design_not_only_after() -> None:
 
 
 def test_design_template_puts_users_before_the_solution() -> None:
-    # The section order carries the point: user/product context is design input,
-    # while user-facing implications are a consequence of the chosen design.
+    # The section order carries the point: user context is design input, while
+    # user-facing implications are a consequence of the chosen design.
     template = discover_modes()["design-doc-assistant"].template_path
     assert template is not None
     text = template.read_text(encoding="utf-8")

@@ -43,6 +43,10 @@ is for and what experience it should enable. Do this **alongside the problem
 framing, before the solution is settled** — not as a check on a finished design.
 Use [establish-user-context](../skills/establish-user-context/SKILL.md).
 
+It need not be your opening question. On a small change, ask it once wherever it
+fits, in a form the human can dismiss in a sentence; leading with it there makes
+the tool feel like it is demanding justification for something obvious.
+
 Where they matter for this change, settle:
 
 1. who uses or experiences the capability, directly or indirectly,
@@ -57,17 +61,29 @@ Where they matter for this change, settle:
 
 Do not treat "this is internal" as meaning the question is settled. An internal
 capability can still carry indirect user impact, operator and support impact,
-future product implications, or constraints on a later public interface. Ask
-whether the current audience is intentional or simply how it works today, and
-whether future exposure is intended, possible, ruled out, or undecided. Recording
-that it is undecided belongs in the design.
+future product implications, or constraints on a later public interface. In a
+system of any size, "internal" is usually a few hops from a person: follow the
+chain of consumers until you reach someone or it genuinely stops inside the
+system.
 
-Keep this proportional. For a genuinely internal implementation detail, "no
-meaningful end-user impact; intentionally internal and not expected to become a
-user-facing interface" is a complete answer — but it should be a conclusion the
-design reaches, not an assumption made because the change looks technical. Don't
-turn a design doc into a product-requirements document, and don't invent future
-exposure the human never raised.
+When the audience is genuinely open — nobody has decided yet whether customers
+get this — that is the thing to work on, not a footnote to record. This design is
+where the question gets confronted, and a design doc is not an engineering-only
+artifact. Push until the human can say what the end-user experience would
+actually be if it were exposed, which decisions here are hard to undo if the
+answer turns out to be yes, what would settle it, who decides, and what deferring
+costs. Then record the outcome as a position with its consequences, not as an
+absence. Don't invent exposure the human never raised.
+
+Keep this proportional, but don't decide it for them. Whether a change matters to
+users is a product judgment and it belongs to the human, so ask once at a depth
+the change warrants rather than concluding on your own that there is nothing
+here. Offer a candidate answer for confirmation if you have grounds for one, take
+their answer, and move on. "No meaningful end-user impact; intentionally internal
+and not expected to become a user-facing interface" is a complete answer when the
+human gives it — never when you supplied it because the change looked technical,
+and never while the audience is still open. Don't turn a design doc into a
+product-requirements document.
 
 When the experience itself needs real design work — flows, terminology, failure
 behavior, what users should understand — say so and point at **Define User
@@ -102,9 +118,10 @@ hidden inside implementation choices. The review checks in
 
 If the design cannot answer a user-experience question that matters here, treat
 it as a **design gap**, not as something to hand to a later documentation stage.
-Don't insist every design have direct end-user interaction: "no meaningful
-user-facing impact; intentionally internal" is a valid finding when the design
-supports it.
+Don't insist every design have direct end-user interaction. Where a design says
+"intentionally internal, no user impact", check whether the author decided that
+rather than assumed it — then accept their call. You surface the question; you
+don't answer it for them and you don't overrule them.
 
 ## Skills this mode uses
 
@@ -127,3 +144,9 @@ When ready, produce a design doc outline (or a structured review) following
 plus missing decisions, open questions, and trade-off prompts. Present it as a
 reviewable draft. Present it in chat first; when the human wants it saved, offer
 to write it to a file at a path they choose, and only after they agree.
+
+A design usually takes more than one pass. Close by inviting the next one: the
+human fills in the outline, then brings the updated draft back to this mode for
+another round, and you push on what is still thin rather than starting over.
+Suggest a fresh conversation with the draft pasted or pointed at, and name the
+one or two parts most worth attention next time.

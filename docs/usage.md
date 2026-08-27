@@ -18,15 +18,16 @@ Socratic Garden's agent modes live in `.github/agents/` and its skills in
 
   ```bash
   git clone git@github.com:YanisaHS/socratic-garden.git ~/socratic-garden
-  mkdir -p ~/.copilot/agents ~/.copilot/skills
-  ln -s ~/socratic-garden/.github/agents/*.agent.md ~/.copilot/agents/
-  ln -s ~/socratic-garden/.github/skills/*          ~/.copilot/skills/
+  mkdir -p ~/.copilot
+  ln -s ~/socratic-garden/.github/agents ~/.copilot/agents
+  ln -s ~/socratic-garden/.github/skills ~/.copilot/skills
   ```
 
   Then run `copilot` from your own project and pick a mode with `/agent`. Because
   these are symlinks, a `git pull` in `~/socratic-garden` keeps the modes current
-  without copying a snapshot that drifts. A brand-new agent or skill added
-  upstream needs one more `ln -s`.
+  without copying a snapshot that drifts, and picks up anything added upstream.
+  If you already keep your own agents or skills in `~/.copilot/`, link the
+  contents instead of the directories; see [installation.md](installation.md).
 
 You need Python 3.11 or later only if you use the command-line tool, which runs
 from a checkout of this repository. The agent modes need a tool that reads custom
@@ -114,6 +115,29 @@ artifact the last mode produced — the brief, the design — and hand it to the
 one, rather than switching mid-conversation and expecting it to carry everything.
 With the command-line tool, `--file` does this; in a chat tool, start a new
 conversation for the next mode and paste or point at the artifact.
+
+### Going round again
+
+Moving forward isn't the only next step. Most artifacts worth having take more
+than one pass, and a design doc almost always does: the first session gives you
+an outline and a pile of questions, you go away and answer them, and the second
+session can push on what you wrote instead of what was missing.
+
+To iterate, start a fresh conversation in the same mode and give it your updated
+draft:
+
+```bash
+socratic-garden design --topic "retry flag" --file design/retry-flag.md
+```
+
+In a chat tool, open the mode again and paste the draft in. Say what you changed
+and what you want pushed on — the modes go deeper when they aren't rediscovering
+the whole change each time.
+
+Two modes are worth alternating for this. **Design Doc Assistant** asks you
+questions and fills gaps; **Documentation Reviewer** reads what you wrote and
+tells you what doesn't hold up. Drafting with one and checking with the other
+tends to surface different things. Stop when the passes stop changing your mind.
 
 ## Using the command-line tool
 

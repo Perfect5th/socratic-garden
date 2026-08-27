@@ -32,5 +32,6 @@ For each impact:
 - List anything you cannot determine as an open question.
 
 The point is to make the human consequences of a technical change visible before
-they surprise someone. Finding none is a valid result — say so rather than
-stretching for an impact.
+they surprise someone. If you walk the dimensions and find nothing, say so and
+put it to the human to confirm — don't stretch for an impact, and don't rule one
+out on their behalf.

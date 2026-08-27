@@ -69,8 +69,9 @@ will work similarly.
    Change** or **Design Doc Assistant**, then describe what you're working on.
 
 The mode works through the change with you and produces a reviewable artifact.
-Python 3.11+ is only needed for the fallback command-line tool, not the agent
-modes.
+Expect to go round more than once: fill in the draft, then bring it back to the
+same mode for another pass. Python 3.11+ is only needed for the fallback
+command-line tool, not the agent modes.
 
 ### Using it on your own project
 
@@ -80,15 +81,16 @@ personal level so they show up in every project you open:
 
 ```bash
 git clone git@github.com:YanisaHS/socratic-garden.git ~/socratic-garden
-mkdir -p ~/.copilot/agents ~/.copilot/skills
-ln -s ~/socratic-garden/.github/agents/*.agent.md ~/.copilot/agents/
-ln -s ~/socratic-garden/.github/skills/*          ~/.copilot/skills/
+mkdir -p ~/.copilot
+ln -s ~/socratic-garden/.github/agents ~/.copilot/agents
+ln -s ~/socratic-garden/.github/skills ~/.copilot/skills
 ```
 
 Then run `copilot` from your own project and pick a mode with `/agent`. Because
 these are symlinks into your clone, a `git pull` in `~/socratic-garden` updates
-the modes everywhere — you stay on upstream instead of copying a snapshot that
-drifts.
+everything — including modes and skills added upstream. If you already keep your
+own agents or skills in `~/.copilot/`, link the contents instead of the
+directories; see [docs/installation.md](docs/installation.md).
 
 Using a different tool? See [docs/installation.md](docs/installation.md) for
 installing the skills in Zed, Claude Code, Codex, Cursor, and others, including
@@ -194,6 +196,7 @@ Within a session, the AI can:
 By default, it doesn't:
 
 - decide product behavior,
+- decide who a capability is for, or rule that a change has no user impact,
 - state unsupported claims as fact,
 - write or change files without your approval, or publish anything,
 - treat its own inferences as truth,

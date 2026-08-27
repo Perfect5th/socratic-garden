@@ -39,7 +39,10 @@ kind of noise. Apply this proportionally (see
 - **Operability and observability** — how it's deployed, configured, upgraded,
   monitored, and debugged; what logs, metrics, and alerts operators need.
 - **Usability and accessibility** — whether the people using it can actually
-  succeed, including accessibility for users with disabilities.
+  succeed, including accessibility for users with disabilities. This lens asks
+  whether the thing being built works for its users; establishing *who* those
+  users are and what experience it should enable belongs to
+  [establish-user-context](../establish-user-context/SKILL.md), and comes first.
 - **Specialized and constrained environments** — air-gapped or offline
   deployments, on-premises vs. cloud, specific platforms or architectures,
   resource-limited devices, and regional differences the design must work in.

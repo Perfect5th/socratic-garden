@@ -45,6 +45,7 @@ AI can:
 AI must not, by default:
 
 - decide product behavior,
+- decide who a capability is for, or rule that a change has no user impact,
 - claim unsupported facts,
 - silently edit source files,
 - publish documentation,
