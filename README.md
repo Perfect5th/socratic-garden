@@ -103,9 +103,9 @@ Documentation is often written last, after the real decisions are already buried
 in code and old chat threads. Socratic Garden treats documentation as part of the
 engineering process rather than an output after implementation.
 
-- Design docs record decisions: the problem, the alternatives, and the direction
-  chosen.
-- User-doc drafts help define the intended user experience.
+- Design docs record decisions: the problem, who the change is for, the
+  alternatives, and the direction chosen.
+- User-doc drafts make the intended experience concrete and show where it breaks.
 - Internal docs preserve reproduction, testing, and maintenance knowledge.
 
 Writing about a change early exposes the parts you haven't actually decided yet.
@@ -122,10 +122,13 @@ is a front door that points you to the right one.
   mode to start with, so you don't have to know them all first.
 - **Clarify Change** clarifies a feature idea, behavior change, bug fix, or
   proposal before or during design.
-- **Define User Experience** defines the intended user experience for a feature.
-- **Design Doc Assistant** creates or reviews an engineering design document.
+- **Define User Experience** designs the experience itself in depth: flow,
+  terminology, and failure behavior.
+- **Design Doc Assistant** creates or reviews an engineering design document,
+  including who the change is for and what experience it should enable.
 - **Documentation Planner** decides what documentation artifacts a change needs.
-- **Documentation Reviewer** reviews an existing doc against its purpose.
+- **Documentation Reviewer** reviews an existing doc — including a design doc —
+  against its purpose.
 - **Draft Documentation** turns goals and plans you have already defined into a
   first draft. Use it after clarifying, defining UX, or planning, not as a way to
   skip that work. It doesn't invent product behavior, and it marks unconfirmed
@@ -142,6 +145,8 @@ work, and the library is meant to grow as new disciplines prove useful.
 - **choose-a-mode** points you to the right mode to start with, based on what
   you're working on.
 - **identify-the-audience** fixes who the doc is for before anything is written.
+- **establish-user-context** settles who a capability is for and what experience
+  it should enable, early enough to shape the design.
 - **separate-fact-from-inference** labels what is known versus assumed.
 - **extract-user-facing-implications** turns changes into user-visible effects.
 - **identify-edge-cases** surfaces boundaries, failure modes, and gaps.

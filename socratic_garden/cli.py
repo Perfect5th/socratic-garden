@@ -76,8 +76,8 @@ def build_parser() -> argparse.ArgumentParser:
 
     for name, help_text in (
         ("clarify", "Clarify a feature idea, behavior change, bug fix, or proposal."),
-        ("ux", "Define the intended user experience for a feature or behavior."),
-        ("design", "Create or review an engineering design document."),
+        ("ux", "Design the experience itself: flow, terminology, failure behavior."),
+        ("design", "Create or review an engineering design doc, including who it's for."),
         ("plan-docs", "Decide what documentation artifacts are needed."),
     ):
         p = sub.add_parser(name, help=help_text)

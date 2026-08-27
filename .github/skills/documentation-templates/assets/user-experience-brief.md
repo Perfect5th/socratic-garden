@@ -1,5 +1,10 @@
 # User experience brief
 
+## Who this is for
+
+_Who experiences this directly or indirectly, who uses it today versus who may
+later, and whether that boundary is intentional or just current._
+
 ## User goal
 
 _What the user is ultimately trying to accomplish._

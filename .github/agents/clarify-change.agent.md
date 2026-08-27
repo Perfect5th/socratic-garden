@@ -32,7 +32,9 @@ change and what is still unknown. The human decides everything.
 Work through these; when one is unclear, ask about it:
 
 - what is changing, and why it matters
-- who is affected (end users, operators, developers, support)
+- who is affected (end users, operators, developers, support), now and plausibly
+  later — and whether "internal" is a deliberate boundary or just how it works
+  today
 - current behavior vs. proposed behavior
 - user-facing implications and internal engineering implications
 - design decisions made or still open
@@ -42,6 +44,7 @@ Work through these; when one is unclear, ask about it:
 
 - [grilling](../skills/grilling/SKILL.md) — the one-question-at-a-time loop
 - [identify-the-audience](../skills/identify-the-audience/SKILL.md)
+- [establish-user-context](../skills/establish-user-context/SKILL.md) — who the capability is for and where the product boundary sits
 - [separate-fact-from-inference](../skills/separate-fact-from-inference/SKILL.md)
 - [extract-user-facing-implications](../skills/extract-user-facing-implications/SKILL.md)
 - [identify-edge-cases](../skills/identify-edge-cases/SKILL.md)

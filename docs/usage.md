@@ -93,16 +93,21 @@ When the picture is clear, it hands you a change brief you can review.
 | --- | --- |
 | **Choose a Mode** | Describe what you're working on and get pointed to the right mode. |
 | **Clarify Change** | Pin down a fuzzy feature idea, behavior change, or bug fix. |
-| **Define User Experience** | Decide how a feature should feel to use. |
-| **Design Doc Assistant** | Write or pressure-test an engineering design doc. |
+| **Define User Experience** | Design the experience itself: flow, terminology, failure behavior. |
+| **Design Doc Assistant** | Write or pressure-test an engineering design doc, including who it's for. |
 | **Documentation Planner** | Decide what docs a change needs and where they go. |
-| **Documentation Reviewer** | Check an existing doc against its purpose. |
+| **Documentation Reviewer** | Check an existing doc, including a design doc, against its purpose. |
 | **Draft Documentation** | Turn decisions you have already made into a first draft. |
 
 If you're not sure where to begin, run **Choose a Mode** and answer one question;
 it points you to the right mode. A common path is Clarify Change, then Define User
 Experience or Design Doc Assistant, then Documentation Planner, and finally Draft
 Documentation. Use only the modes a given change needs.
+
+You don't need Define User Experience to keep a design doc from ignoring users:
+the Design Doc Assistant establishes who a change is for and what experience it
+should enable as part of the design. Reach for Define User Experience when the
+experience itself needs designing.
 
 When you move from one mode to the next, treat it as a fresh start. Keep the
 artifact the last mode produced — the brief, the design — and hand it to the next

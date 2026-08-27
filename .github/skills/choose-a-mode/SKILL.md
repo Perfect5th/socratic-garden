@@ -24,7 +24,7 @@ is to get them into the right one quickly, not to run the work yourself.
 | If they are… | Point them to |
 | --- | --- |
 | Working out a fuzzy change, bug fix, or proposal | **Clarify Change** |
-| Shaping how a feature should feel to use | **Define User Experience** |
+| Designing the experience itself: flow, terminology, failure behavior | **Define User Experience** |
 | Writing or pressure-testing a design | **Design Doc Assistant** |
 | Deciding what docs a change needs, and where | **Documentation Planner** |
 | Checking an existing doc against its purpose | **Documentation Reviewer** |
@@ -35,6 +35,10 @@ is to get them into the right one quickly, not to run the work yourself.
 - A common path is Clarify Change → Define User Experience or Design Doc Assistant
   → Documentation Planner → Draft Documentation. If they are early, start at
   Clarify Change.
+- Don't send someone to Define User Experience just so a design doc will consider
+  users. The Design Doc Assistant establishes who a change is for as part of
+  designing it. Point to Define User Experience when the experience needs real
+  design work of its own.
 - If nothing fits, or the change is still too vague to place, start with Clarify
   Change to surface the shape of it.
 - Routing is a suggestion. The human picks; you make the pick easy.

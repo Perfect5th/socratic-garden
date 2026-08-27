@@ -76,6 +76,30 @@ def test_thinking_modes_close_with_a_recap() -> None:
         assert "recap-the-session" in skill_dirs, f"{key} should reference recap-the-session"
 
 
+def test_user_context_is_established_during_design_not_only_after() -> None:
+    # Establishing who a change is for belongs to the modes that shape and review
+    # a design, not only to the downstream ones that report its effects.
+    modes = discover_modes()
+    for key in ("clarify-change", "design-doc-assistant", "define-user-experience",
+                "documentation-reviewer"):
+        skill_dirs = {p.parent.name for p in modes[key].skill_paths}
+        assert "establish-user-context" in skill_dirs, (
+            f"{key} should reference establish-user-context"
+        )
+
+
+def test_design_template_puts_users_before_the_solution() -> None:
+    # The section order carries the point: user/product context is design input,
+    # while user-facing implications are a consequence of the chosen design.
+    template = discover_modes()["design-doc-assistant"].template_path
+    assert template is not None
+    text = template.read_text(encoding="utf-8")
+    users = text.index("## Users and intended experience")
+    solution = text.index("## Proposed solution")
+    implications = text.index("## User-facing implications")
+    assert users < solution < implications
+
+
 def test_resolve_mode_accepts_alias_and_stem() -> None:
     assert resolve_mode("clarify").key == "clarify-change"
     assert resolve_mode("clarify-change").key == "clarify-change"

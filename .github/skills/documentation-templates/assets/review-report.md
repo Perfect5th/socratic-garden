@@ -28,7 +28,11 @@ _Statements not backed by evidence, or that are ambiguous._
 
 ## Missing user context
 
-_What a reader needs but the doc does not provide._
+_What a reader needs but the doc does not provide. For a design doc, this is also
+where user and product gaps belong: who is affected, what experience the design
+should enable, whether an "internal" boundary is intentional or just current, and
+product decisions hidden inside implementation choices. Report those as design
+gaps, not as later documentation work._
 
 ## Missing edge cases
 

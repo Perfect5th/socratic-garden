@@ -15,6 +15,14 @@ widgets, adding latency to common workflows.
 - Distributed or cross-process caching.
 - Persisting the cache across restarts.
 
+## Users and intended experience
+
+Operators configure the cache; end users only experience it as faster lookups.
+The intended experience for an operator is to turn it on, set a bound, and not
+think about it again. No new end-user surface: `cache.enabled` and
+`cache.max_items` are the only things anyone interacts with, and that boundary is
+intentional. Cache internals — eviction order, hit accounting — stay hidden.
+
 ## Proposed solution
 
 Add an in-memory least-recently-used (LRU) cache in front of the widget lookup
@@ -34,4 +42,5 @@ reuse.
 ## Open questions
 
 - What default `max_items` value fits the most common workloads?
-- Should cache statistics be exposed for operators?
+- Should cache statistics be exposed for operators? If so, that adds an operator
+  surface this design has not settled.
