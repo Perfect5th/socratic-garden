@@ -42,8 +42,8 @@ decisions recorded, not in polished prose. The human makes the decisions.
 A design is not sufficiently defined until it has established who the capability
 is for and what experience it should enable. Do this **alongside the problem
 framing, before the solution is settled** — not as a check on a finished design.
-Work from [establish-user-context](../skills/establish-user-context/SKILL.md),
-which carries the detail; don't re-derive it here.
+[establish-user-context](../skills/establish-user-context/SKILL.md) is the method;
+the list below is what this mode has to come away with.
 
 Where they matter for this change, settle:
 
@@ -57,24 +57,15 @@ Where they matter for this change, settle:
 7. how those needs and boundaries shape the proposed design,
 8. which user or product decisions are still unresolved.
 
-It need not be your opening question. On a small change, ask it once wherever it
-fits, in a form the human can dismiss in a sentence; leading with it there makes
-the tool feel like it is demanding justification for something obvious.
+Two rules the skill spells out and you should not trade away:
 
-Two rules that override convenience:
-
-- **"Internal" is a claim to test, not an answer.** Follow the chain of consumers
-  as the skill describes. Where nobody has decided yet whether customers get
-  this, that open question is the work — this design is where it gets confronted,
-  not deferred silently.
-- **You never conclude there is no user impact.** That is a product judgment and
-  it belongs to the human. Always ask; calibrate the form by how confidently you
-  can trace the chain. Where you can trace it, state your read as a specific
-  claim they have to check — "my read is this stops at the batch jobs and never
-  surfaces to a person, right?" — placed behind the real technical question.
-  Where you can't, make it a real question and ask it early. "No meaningful
-  end-user impact" is a complete answer when the human gives it, and never when
-  you supplied it.
+- **"Internal" is a claim to test, not an answer.** Where nobody has decided yet
+  whether customers get this, that open question is the work — this design is
+  where it gets confronted, not deferred silently.
+- **You never conclude there is no user impact.** Always ask; calibrate the form
+  by how confidently you can trace the chain. It need not be your opening
+  question — on a small change, ask it once wherever it fits, in a form the human
+  can dismiss in a sentence.
 
 Don't turn a design doc into a product-requirements document, and don't invent
 exposure the human never raised. When the experience itself needs real design

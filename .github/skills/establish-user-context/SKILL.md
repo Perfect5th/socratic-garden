@@ -7,13 +7,12 @@ description: 'Establish who a capability is for and what experience it should en
 
 Work out who a capability is for and what experience it should enable **while the
 design is still being decided**, so the technical direction is informed by it.
-This is the design *input* side of the user question. The
+This is the design *input* side of the user question;
 [extract-user-facing-implications](../extract-user-facing-implications/SKILL.md)
-skill covers the *output* side: once a solution exists, what actually changes for
-people.
+covers the *output* side, once a solution exists.
 
 The failure this prevents is deciding a technical design first and only then
-asking whether it has user-facing implications. By then, the interfaces,
+asking whether it has user-facing implications. By then the interfaces,
 abstractions, permissions, terminology, and data model have already made product
 decisions on the human's behalf.
 
@@ -21,16 +20,16 @@ decisions on the human's behalf.
 
 Work through these where they carry weight for this change:
 
-- **Who interacts with it** — directly and indirectly. Include operators and
+- **Who interacts with it** — directly and indirectly, including operators and
   support, not only end users.
 - **Now versus later** — who uses it today, and who plausibly could later.
 - **Is the boundary intentional?** — an audience limit can be a deliberate
   product decision, a temporary state, or simply how it happens to be built
-  today. These are different, and the design should say which.
+  today. The design should say which.
 - **The goal** — what the user or operator is trying to accomplish through this.
 - **The intended experience** — at the level of detail the change warrants; often
   a sentence or two, not a walkthrough.
-- **What stays hidden** — the implementation detail users should never have to
+- **What stays hidden** — implementation detail users should never have to
   understand.
 - **What this implies for the design** — where the audience or intended
   experience constrains interfaces, abstractions, permissions, terminology,
@@ -38,42 +37,36 @@ Work through these where they carry weight for this change:
 - **What is still undecided** — product or UX questions worth recording even when
   they do not block the implementation.
 
-## "Internal" is a conclusion, not an assumption
+## "Internal" is a claim to test
 
-Do not accept "this is internal" as meaning the user and product dimension is
-irrelevant. An internal capability can still have:
+An internal capability can still carry indirect impact on end users, direct
+impact on operators and support, future product implications, or decisions that
+constrain a later public interface. In a system of any size most components are
+reached through other components, so "internal" is often just "a few hops from a
+person".
 
-- indirect impact on end users,
-- direct impact on operators and support,
-- future product implications,
-- decisions made now that constrain a later public interface.
-
-In a system of any size, most components are reached through other components,
-so "internal" is often just "a few hops from a person". Follow the chain: who
-consumes this, who consumes them, and does the effect eventually surface to a
-human? Keep going until you reach someone or the chain genuinely stops inside the
-system. Where it surfaces, that person's experience is in scope even though they
-never touch this capability directly.
+So follow the chain: who consumes this, who consumes them, and does the effect
+eventually surface to a human? Keep going until you reach someone or it genuinely
+stops inside the system. Where it surfaces, that person's experience is in scope
+even though they never touch this capability directly.
 
 Follow the chain to ask a better question, not to manufacture an answer. If the
 human has already traced it and told you where it stops, that settles it — take
-their word and move on rather than hunting for a hop they missed.
+their word rather than hunting for a hop they missed.
 
 ## When exposure is undecided, that is the decision to work on
 
 "We don't know yet whether customers will get this" is the case this skill exists
-for. It is not a footnote to record and move past. A design doc is where that
-question gets confronted — it is not an engineering-only artifact, and the
-audience question rarely gets a better moment than this one.
+for, and it is not a footnote to record and move past. A design doc is where that
+question gets confronted; it is not an engineering-only artifact.
 
 When the audience is genuinely open, work it through:
 
-- **What would the end-user experience actually be** if it were exposed? Enough
-  to be concrete — what they would do with it, what they would see, what they
-  would need to understand. Not a full UX pass; enough that "exposed" means
-  something specific rather than a shrug.
-- **What would have to be true** for that to be a good experience, and does the
-  current direction get there or away from it?
+- **What the end-user experience would actually be** if it were exposed — what
+  they would do, see, and need to understand. Not a full UX pass; enough that
+  "exposed" means something specific rather than a shrug.
+- **What would have to be true** for that to be a good experience, and whether
+  the current direction moves toward it or away.
 - **Which decisions here are hard to undo** if the answer turns out to be yes —
   names users would see, permission and tenancy models, error semantics, data
   shapes, API surface, compatibility promises.
@@ -82,29 +75,25 @@ When the audience is genuinely open, work it through:
   answer, because a design that only works for internal callers is a decision
   against exposure whether or not anyone said so.
 
-Then record the outcome as a real position, not an absence:
+Record the outcome as a position, not an absence:
 
 > The capability is initially for internal use. Exposing it to end users later
 > may be desirable, but that is not decided by this design. If it happens, the
 > permission model and the error strings are the parts that would have to change.
 
-Do not manufacture speculation. Pursue future exposure when it is plausible,
+Don't manufacture speculation. Pursue future exposure when it is plausible,
 raised by the human, visible in the existing context, or materially relevant —
 and drop it when it isn't.
 
 ## Always ask — calibrate the form by your confidence
 
-This is not a product-requirements exercise, and a change with no real user
-dimension should not become one. But **you do not get to decide it has none.**
-Whether a change matters to users is a product judgment, and product judgments
-belong to the human.
+A change with no real user dimension should not become a product-requirements
+exercise. But **you do not get to decide it has none.** That is a product
+judgment and it belongs to the human. So you always ask; what varies is the form.
 
-So you always ask. What varies is the form, and that depends on how well you can
-already trace the chain from what the human has told you.
-
-**When you can trace it and it stops cleanly**, state your read as a specific
-claim and invite correction. Keep it to a line, and put it behind the real
-technical question rather than in front of it:
+**When you can trace the chain and it stops cleanly**, state your read as a
+specific claim and invite correction — one line, placed behind the real technical
+question rather than in front of it:
 
 > My read is this stops at the three batch jobs and never surfaces to a person.
 > Right?
@@ -120,17 +109,11 @@ consumer might pass this further up — it is a real open question, and it goes
 early, before the solution hardens. Don't guess to spare them a turn.
 
 Either way you are asking, never assuming. A confident read is still a claim for
-the human to confirm or correct; it is not licence to record a conclusion they
-never made. What gets recorded is theirs:
-
-> No meaningful end-user impact. This is intentionally internal and is not
-> expected to become a user-facing interface.
-
-If they answer with a bare "no impact" and nothing more, take it — it is their
-call — and record what they actually said rather than inventing a rationale on
-their behalf. Ask a second time only where a decision in this design would be
-expensive to undo if that answer turned out to be wrong (see
-[calibrate-scrutiny](../calibrate-scrutiny/SKILL.md)).
+the human to confirm or correct, not licence to record a conclusion they never
+made. If they answer with a bare "no impact" and nothing more, take it and record
+what they actually said rather than inventing a rationale for them. Ask a second
+time only where a decision here would be expensive to undo if that answer turned
+out wrong (see [calibrate-scrutiny](../calibrate-scrutiny/SKILL.md)).
 
 ## Watch for hidden product decisions
 
@@ -140,36 +123,21 @@ model, a limit, a default. Name the decision and hand it back; do not settle it.
 
 ## Using it to review a design
 
-The same questions work as review checks. Against an existing design, ask or
-flag:
+The items above work as review checks: ask whether the design settled each one
+that matters here, not whether it wrote a section about them. Two checks are
+specific to reviewing:
 
-- who is affected, and what experience they should get,
-- whether the design says what users or operators should be able to accomplish,
-- whether the technical solution actually supports that,
-- whether the capability is internal, exposed, indirectly user-facing,
-  potentially user-facing later, or undecided,
-- if it is described as internal, whether that is an intentional product boundary
-  or merely true today,
-- if exposure is undecided, whether the design says what the end-user experience
-  would be, what would have to change, who decides, and what deferring costs —
-  or whether it just left the question hanging,
-- whether technical decisions unnecessarily constrain a plausible future
-  user-facing interface,
-- whether product or UX decisions are hidden inside implementation choices,
-- whether important user-facing effects are missing,
-- whether unresolved user and product questions are recorded.
+- **Do technical decisions foreclose a plausible future user-facing interface**
+  without anyone having said so?
+- **Was "intentionally internal, no user impact" decided or merely asserted?** A
+  decided position usually shows its work — who was consulted, what would have
+  changed the answer, what happens if it turns out wrong. A decorated assumption
+  states the conclusion and stops. If it reads as the latter, say so and ask; if
+  the author established it, accept it. You don't overrule a product call and you
+  don't supply one.
 
-When the design cannot answer a user-experience question that matters here, that
-is a **design gap**, not a task for a later documentation stage. Report it as
-such.
-
-Where a design states "intentionally internal, no user impact", your job is to
-check whether a human actually decided that — not to re-judge it. A decided
-position usually shows its work: who was consulted, what would have changed the
-answer, or what happens if it turns out wrong. A decorated assumption asserts the
-conclusion and stops. If it reads as the latter, say so and ask. If the author
-established it, accept it; you don't overrule a product call, and you don't
-supply one either.
+What the design failed to settle is a **design gap**, not a task for a later
+documentation stage.
 
 ## Defer, don't duplicate
 
