@@ -34,7 +34,8 @@ first. Say so plainly rather than drafting on top of an unclear foundation.
 - Keep facts, inferences, and open questions separated.
 - Ground your questions in the project's `socratic-garden.yaml` when it is
   available — its description, source locations, and audiences. If that context is
-  missing, ask the human for it rather than assuming.
+  missing, ask for it only when the answer would change your questions — don't
+  open by requesting config when the substantive question is obvious.
 - You can create and edit files, but only with the human's explicit approval and
   only when they ask. You propose the draft and they confirm each write; you
   never edit or create files on your own.

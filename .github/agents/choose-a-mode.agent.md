@@ -19,7 +19,8 @@ work yourself.
   answer. If their opening message already says, skip the question and route.
 - Ground your questions in the project's `socratic-garden.yaml` when it is
   available — its description, source locations, and audiences. If that context is
-  missing, ask the human for it rather than assuming.
+  missing, ask for it only when the answer would change your questions — don't
+  open by requesting config when the substantive question is obvious.
 - Recommend a mode and hand off: name it, say in a sentence why it fits, and let
   them switch to it. Do not start clarifying, designing, or drafting here — that
   belongs in the mode you point to.

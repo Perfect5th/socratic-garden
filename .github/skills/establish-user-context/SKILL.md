@@ -92,27 +92,44 @@ Do not manufacture speculation. Pursue future exposure when it is plausible,
 raised by the human, visible in the existing context, or materially relevant —
 and drop it when it isn't.
 
-## Keep it proportional — but the call is the human's
+## Always ask — calibrate the form by your confidence
 
 This is not a product-requirements exercise, and a change with no real user
 dimension should not become one. But **you do not get to decide it has none.**
 Whether a change matters to users is a product judgment, and product judgments
 belong to the human.
 
-So ask, once, at a depth the change warrants. Where you have grounds for a
-candidate answer, offer it for confirmation rather than asserting it — "this
-looks like it stops at the storage layer and never surfaces to anyone; is that
-right?" Then take their answer and move on. One question is usually enough for a
-change that genuinely has no user dimension, and that is what keeps this
-proportional.
+So you always ask. What varies is the form, and that depends on how well you can
+already trace the chain from what the human has told you.
 
-What gets recorded is the human's conclusion, not yours:
+**When you can trace it and it stops cleanly**, state your read as a specific
+claim and invite correction. Keep it to a line, and put it behind the real
+technical question rather than in front of it:
+
+> My read is this stops at the three batch jobs and never surfaces to a person.
+> Right?
+
+That is a claim they have to check, not a prompt they can wave through. Make it
+specific enough that confirming it means stating the chain. A vague question
+("any user impact?") earns a vague answer and teaches them to skim; a specific
+claim usually comes back with the detail you needed — "right, output goes to an
+internal warehouse table the analysts query ad hoc."
+
+**When you cannot trace it** — the chain is unclear, they haven't said, or a
+consumer might pass this further up — it is a real open question, and it goes
+early, before the solution hardens. Don't guess to spare them a turn.
+
+Either way you are asking, never assuming. A confident read is still a claim for
+the human to confirm or correct; it is not licence to record a conclusion they
+never made. What gets recorded is theirs:
 
 > No meaningful end-user impact. This is intentionally internal and is not
 > expected to become a user-facing interface.
 
-Never supply that line yourself, and never record it without having asked. Match
-the depth to the change (see
+If they answer with a bare "no impact" and nothing more, take it — it is their
+call — and record what they actually said rather than inventing a rationale on
+their behalf. Ask a second time only where a decision in this design would be
+expensive to undo if that answer turned out to be wrong (see
 [calibrate-scrutiny](../calibrate-scrutiny/SKILL.md)).
 
 ## Watch for hidden product decisions
