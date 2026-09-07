@@ -169,6 +169,11 @@ work, and the library is meant to grow as new disciplines prove useful.
   alignment.
 - **calibrate-scrutiny** keeps feedback proportional: concise by default, and a
   deeper, structured pass only when the stakes call for it.
+- **show-me** closes a design or review pass with the smallest visuals that make a
+  change legible — Mermaid diagrams, targeted diffs, stack-trace diffs, lists of
+  new and modified files, and new surfaces such as API contracts, interfaces, and
+  schema changes. Adapted from HumanLayer's
+  [show-me skill](https://github.com/humanlayer/skills) under the MIT License.
 - **documentation-templates** holds the output structures every mode produces.
   The templates live under
   [.github/skills/documentation-templates/assets/](.github/skills/documentation-templates/assets).
