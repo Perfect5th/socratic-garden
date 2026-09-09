@@ -68,6 +68,16 @@ will work similarly.
 3. Inside the CLI, pick an agent mode with `/agent`. For example **Clarify
    Change** or **Design Doc Assistant**, then describe what you're working on.
 
+To skip the menu, boot straight into a mode with the `--agent` flag —
+`copilot --agent "Design Doc Assistant"`. See
+[docs/usage.md](docs/usage.md#jump-straight-into-a-mode) for aliases and details.
+
+Prefer to skip the Copilot TUI entirely? The minimal harness
+[`bin/sg-chat`](bin/sg-chat) runs a mode as a plain-text human↔agent loop, lets
+you pick a model, and drives the Copilot CLI headlessly in the background —
+`bin/sg-chat --draft braindump.md`. See
+[docs/usage.md](docs/usage.md#run-a-mode-without-the-tui-the-harness).
+
 The mode works through the change with you and produces a reviewable artifact.
 Expect to go round more than once: fill in the draft, then bring it back to the
 same mode for another pass. Python 3.11+ is only needed for the fallback
